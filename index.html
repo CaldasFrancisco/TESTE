@@ -50,139 +50,43 @@
   <title>ROTINA SAGRADA</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       margin: 0;
       padding: 1rem;
-      background: #121212;
+      background: linear-gradient(180deg, #1a1a1a, #121212);
       color: #FFFFFF;
       text-transform: uppercase;
     }
     h1, h2 {
       color: #FFFFFF;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
     nav {
-      position: sticky;
-      top: 0;
-      background: #1a1a1a;
-      padding: 0.5rem;
-      z-index: 100;
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 0.5rem;
-      overflow-x: auto;
-    }
-    nav a {
-      padding: 0.5rem 1rem;
-      background: #333333;
-      color: #FFFFFF;
-      text-decoration: none;
-      border-radius: 5px;
-      font /
-
-System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não está completo. Vou fornecer uma solução completa para os problemas mencionados, incluindo todas as melhorias solicitadas, e garantir que o código esteja funcional, com as modificações explicadas. Como o código é extenso, vou focar nas partes alteradas ou novas, mas fornecerei um arquivo HTML completo dentro do `<xaiArtifact>` que atende a todas as suas necessidades.
-
----
-
-### **Resumo das Solicitações e Soluções**
-
-1. **Seção de Água**:
-   - Remover taxa de progresso/porcentagem.
-   - Substituir `select` por botões para adicionar garrafas (644ml, 1L, 800ml).
-   - Exibir total de água consumida (em ml).
-   - Adicionar um bonequinho SVG que enche até 4L.
-2. **Navegação**:
-   - Adicionar menu fixo no topo com botões para cada seção.
-3. **To-Do List**:
-   - Incluir campos de data e horário em cada tarefa.
-   - Integrar automaticamente com Google Agenda ao adicionar tarefas.
-4. **Tarefa da Bomba**:
-   - Nova seção para ligar bombas da Jacuzzi (alarme de 4h) e piscina (alarme de 8h).
-5. **Tarefas Importantes**:
-   - Corrigir bug (tarefas não aparecem ou não salvam).
-   - Adicionar ícone de lixeira para exclusão manual.
-   - Estilizar como cards de pendências.
-   - Evitar reset automático; permitir limpeza manual.
-
----
-
-### **Mudanças Implementadas**
-
-1. **Navegação**:
-   - Adicionada uma barra de navegação fixa (`<nav>`) com links para cada seção usando âncoras (`<a href="#section-id">`).
-   - Estilizada para combinar com o tema escuro.
-
-2. **Seção de Água**:
-   - Removido o `select` e a exibição de progresso.
-   - Adicionados botões para 644ml, 1L e 800ml.
-   - Exibe o total de água consumida (`waterTotal` no `localStorage`).
-   - Incluído um SVG que simula um bonequinho enchendo (retângulo com altura proporcional a 4L).
-
-3. **To-Do List**:
-   - Modificada a função `addTodoTask` para incluir inputs de data e horário.
-   - Ao adicionar uma tarefa, abre o Google Agenda com os dados preenchidos.
-   - Unificada com a lógica existente de integração com Google Agenda.
-
-4. **Tarefa da Bomba**:
-   - Nova seção no início do dia com uma checkbox para "Ligar Bombas".
-   - Ao marcar, dispara notificações agendadas (4h para Jacuzzi, 8h para piscina) usando `setTimeout`.
-
-5. **Tarefas Importantes**:
-   - Corrigida a lógica de adição/salvamento (garantindo que `localStorage` persista tarefas).
-   - Adicionado um botão de lixeira por tarefa para exclusão manual.
-   - Estilizadas como cards com bordas destacadas.
-   - Removida qualquer lógica de reset automático; tarefas só são removidas manualmente.
-
-6. **Geral**:
-   - Removido o script XLSX (não usado).
-   - Removido o script Cloudflare (parece relacionado a proteção de servidor, não necessário localmente).
-   - Mantida a estrutura original, com ajustes apenas onde necessário.
-
----
-
-### **Código Corrigido**
-
-<xaiArtifact artifact_id="67a8caed-684b-4ca8-b4cc-8007b93b1a1c" artifact_version_id="c4d2b9c4-bac3-4a39-9184-8a26642b4710" title="index.html" contentType="text/html">
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#121212">
-  <meta name="description" content="TEMPLATE INTERATIVO – ROTINA SAGRADA DE FRANCISCO">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/icon-192.png">
-  <title>ROTINA SAGRADA</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
       padding: 1rem;
-      background: #121212;
-      color: #FFFFFF;
-      text-transform: uppercase;
-    }
-    h1, h2 {
-      color: #FFFFFF;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: #1a1a1a;
-      padding: 0.5rem;
-      z-index: 100;
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
+      background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+      border-radius: 15px;
+      margin-bottom: 1rem;
     }
     nav a {
-      padding: 0.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
       background: #333333;
       color: #FFFFFF;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 0.9rem;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      transition: transform 0.2s, background 0.2s;
     }
     nav a:hover {
+      transform: scale(1.1);
       background: #1E88E5;
     }
     .tab-nav {
@@ -198,7 +102,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       background: #333333;
       color: #FFFFFF;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 10px;
       transition: background 0.2s;
     }
     .tab-nav button.active {
@@ -211,11 +115,11 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       display: block;
     }
     .section {
-      background: #333333;
+      background: linear-gradient(180deg, #3a3a3a, #333333);
       padding: 1rem 1.5rem;
       margin: 1rem 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     .checklist label {
       display: block;
@@ -241,7 +145,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       border: none;
       background: #444444;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 10px;
       transition: transform 0.2s, background 0.2s;
     }
     .mood-selector button:hover {
@@ -252,23 +156,27 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       background: #1E88E5;
     }
     .water-tracker button {
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       margin: 0.5rem;
-      background: #1E88E5;
+      background: #D81B60;
       color: #FFFFFF;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .water-tracker button:hover {
+      transform: scale(1.05);
     }
     .water-tracker svg {
       margin-top: 1rem;
     }
-    .todo-list input[type="text"], .gratitude input[type="text"], .calendar input, .obstacles textarea, .important-tasks input[type="text"] {
+    .todo-list input[type="text"], .gratitude input[type="text"], .calendar input, .obstacles textarea, .important-tasks input[type="text"], .todo-list select {
       width: calc(100% - 2rem);
       padding: 0.5rem;
       margin: 0.5rem 0;
       border: 1px solid #FFFFFF;
-      border-radius: 5px;
+      border-radius: 10px;
       background: #444444;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -286,7 +194,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       padding: 0.5rem;
       font-size: 1rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -321,7 +229,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       background: #444444;
       padding: 0.5rem;
       margin: 0.5rem 0;
-      border-radius: 5px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -336,35 +244,38 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
   <h1>📅 ROTINA SAGRADA DE FRANCISCO – OTIMIZAÇÃO TOTAL</h1>
 
   <nav>
-    <a href="#pumps">Bombas</a>
-    <a href="#reset-data">Reiniciar</a>
-    <a href="#request-notifications">Notificações</a>
-    <a href="#pomodoro">Pomodoro</a>
-    <a href="#calendar">Agenda</a>
-    <a href="#mood">Humor</a>
-    <a href="#water">Água</a>
-    <a href="#todo">To-Do</a>
-    <a href="#gratitude">Gratidão</a>
-    <a href="#sleep">Antes de Dormir</a>
-    <a href="#wake">Acordar</a>
-    <a href="#supp">Suplementos</a>
-    <a href="#gym">Academia</a>
-    <a href="#bath">Banho</a>
-    <a href="#breakfast">Café da Manhã</a>
-    <a href="#work">Execução</a>
-    <a href="#reset">Reset Casa</a>
-    <a href="#content">Conteúdo</a>
-    <a href="#lunch">Almoço</a>
-    <a href="#org">Organização</a>
-    <a href="#sun">Sol</a>
-    <a href="#study">Estudo</a>
-    <a href="#metrics">Métricas</a>
-    <a href="#close">Fechamento</a>
-    <a href="#create">Criativos</a>
-    <a href="#dinner">Jantar</a>
-    <a href="#relax">Banho Relax</a>
-    <a href="#plan">Planejamento</a>
-    <a href="#important">Tarefas Importantes</a>
+    <a href="#pumps">🔧 Bombas</a>
+    <a href="#reset-data">🔄 Reiniciar</a>
+    <a href="#request-notifications">🔔 Notif.</a>
+    <a href="#pomodoro">🍅 Pomodoro</a>
+    <a href="#calendar">📅 Agenda</a>
+    <a href="#mood">😊 Humor</a>
+    <a href="#water">💧 Água</a>
+    <a href="#todo">✅ To-Do</a>
+    <a href="#gratitude">🙏 Gratidão</a>
+    <a href="#sleep">🌙 Dormir</a>
+    <a href="#wake">⏰ Acordar</a>
+    <a href="#supp">☕ Suplem.</a>
+    <a href="#gym">🏋️‍♂️ Academia</a>
+    <a href="#bath">🛁 Banho</a>
+    <a href="#breakfast">🍽️ Café</a>
+    <a href="#work">🚀 Execução</a>
+    <a href="#reset">🧹 Reset</a>
+    <a href="#content">🌍 Conteúdo</a>
+    <a href="#lunch">🍽️ Almoço</a>
+    <a href="#org">🧼 Org.</a>
+    <a href="#sun">☀️ Sol</a>
+    <a href="#study">📚 Estudo</a>
+    <a href="#metrics">📈 Métricas</a>
+    <a href="#close">🧩 Fechamento</a>
+    <a href="#create">💡 Criativos</a>
+    <a href="#dinner">🥣 Jantar</a>
+    <a href="#relax">🛁 Relax</a>
+    <a href="#plan">🌙 Plan.</a>
+    <a href="#payments">💸 Pagtos.</a>
+    <a href="#wife">👩 Esposa</a>
+    <a href="#project">📈 Projeto</a>
+    <a href="#pending">🤝 Pend.</a>
   </nav>
 
   <div class="tab-nav">
@@ -453,6 +364,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
         <button onclick="addWater(644)">644ml</button>
         <button onclick="addWater(1000)">1L</button>
         <button onclick="addWater(800)">800ml</button>
+        <button onclick="removeWater()">Retirar Última</button>
         <p id="water-total">Você bebeu 0ml hoje</p>
         <svg width="100" height="200">
           <rect x="40" y="0" width="20" height="200" fill="#555555"/>
@@ -589,7 +501,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
     </div>
 
     <div class="section" id="reset">
-      <h2>🧹 9H00 – 9H30 – RESET DA CASA</h advising>
+      <h2>🧹 9H00 – 9H30 – RESET DA CASA</h2>
       <div class="checklist" data-section="reset">
         <label><input type="checkbox" id="reset1"> ARRUMAR AMBIENTE VISUAL</label>
         <label><input type="checkbox" id="reset2"> VER LISTA DE MERCADO</label>
@@ -946,6 +858,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
 
     // Water tracker
     let waterTotal = parseInt(localStorage.getItem('waterTotal')) || 0;
+    let waterHistory = JSON.parse(localStorage.getItem('waterHistory')) || [];
     const waterTotalDisplay = document.getElementById('water-total');
     const waterLevel = document.getElementById('water-level');
     waterTotalDisplay.textContent = `Você bebeu ${waterTotal}ml hoje`;
@@ -953,10 +866,26 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
 
     function addWater(amount) {
       waterTotal += amount;
+      waterHistory.push(amount);
       localStorage.setItem('waterTotal', waterTotal);
+      localStorage.setItem('waterHistory', JSON.stringify(waterHistory));
       waterTotalDisplay.textContent = `Você bebeu ${waterTotal}ml hoje`;
       updateWaterLevel();
       new Notification(`Adicionado ${amount}ml de água!`);
+    }
+
+    function removeWater() {
+      if (waterHistory.length > 0) {
+        const lastAmount = waterHistory.pop();
+        waterTotal = Math.max(0, waterTotal - lastAmount);
+        localStorage.setItem('waterTotal', waterTotal);
+        localStorage.setItem('waterHistory', JSON.stringify(waterHistory));
+        waterTotalDisplay.textContent = `Você bebeu ${waterTotal}ml hoje`;
+        updateWaterLevel();
+        new Notification(`Removido ${lastAmount}ml de água!`);
+      } else {
+        new Notification('Nenhuma água para remover!');
+      }
     }
 
     function updateWaterLevel() {
@@ -971,7 +900,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
     const addTodoButton = document.getElementById('add-todo');
     let todoCount = parseInt(localStorage.getItem('todoCount')) || 0;
 
-    function addTodoTask(index, text = '', date = '', time = '', checked = false) {
+    function addTodoTask(index, text = '', date = '', time = '', destination = 'calendar', checked = false) {
       const taskDiv = document.createElement('div');
       taskDiv.innerHTML = `
         <label>
@@ -979,6 +908,13 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
           <input type="text" id="todo-text${index}" placeholder="TAREFA ${index}" value="${text}">
           <input type="date" id="todo-date${index}" value="${date}">
           <input type="time" id="todo-time${index}" value="${time}">
+          <select id="todo-destination${index}">
+            <option value="calendar" ${destination === 'calendar' ? 'selected' : ''}>Google Agenda</option>
+            <option value="payments" ${destination === 'payments' ? 'selected' : ''}>Pagamentos</option>
+            <option value="wife" ${destination === 'wife' ? 'selected' : ''}>Pedidos da Esposa</option>
+            <option value="project" ${destination === 'project' ? 'selected' : ''}>Tarefas do Projeto</option>
+            <option value="pending" ${destination === 'pending' ? 'selected' : ''}>Pendências com Outros</option>
+          </select>
         </label>
       `;
       todoList.appendChild(taskDiv);
@@ -987,6 +923,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       const textInput = document.getElementById(`todo-text${index}`);
       const dateInput = document.getElementById(`todo-date${index}`);
       const timeInput = document.getElementById(`todo-time${index}`);
+      const destinationSelect = document.getElementById(`todo-destination${index}`);
 
       checkbox.addEventListener('change', () => {
         localStorage.setItem(`todo${index}`, checkbox.checked);
@@ -999,30 +936,72 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
 
       textInput.addEventListener('input', () => {
         localStorage.setItem(`todo-text${index}`, textInput.value);
-        addToGoogleCalendar(index);
+        handleTaskDestination(index);
       });
 
       dateInput.addEventListener('input', () => {
         localStorage.setItem(`todo-date${index}`, dateInput.value);
-        addToGoogleCalendar(index);
+        handleTaskDestination(index);
       });
 
       timeInput.addEventListener('input', () => {
         localStorage.setItem(`todo-time${index}`, timeInput.value);
-        addToGoogleCalendar(index);
+        handleTaskDestination(index);
+      });
+
+      destinationSelect.addEventListener('change', () => {
+        localStorage.setItem(`todo-destination${index}`, destinationSelect.value);
+        handleTaskDestination(index);
       });
     }
 
-    function addToGoogleCalendar(index) {
+    function handleTaskDestination(index) {
       const text = document.getElementById(`todo-text${index}`).value;
       const date = document.getElementById(`todo-date${index}`).value;
       const time = document.getElementById(`todo-time${index}`).value;
-      if (text && date && time) {
+      const destination = document.getElementById(`todo-destination${index}`).value;
+
+      if (destination === 'calendar' && text && date && time) {
         const startDateTime = new Date(`${date}T${time}`);
         const endDateTime = new Date(startDateTime.getTime() + 30 * 60 * 1000);
         const formatDate = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(text)}&dates=${formatDate(startDateTime)}/${formatDate(endDateTime)}`;
         window.open(calendarUrl, '_blank');
+      } else if (['payments', 'wife', 'project', 'pending'].includes(destination) && text) {
+        const section = destination;
+        const list = document.getElementById(`${section}-list`);
+        let taskCount = parseInt(localStorage.getItem(`${section}Count`)) || 0;
+        taskCount++;
+        localStorage.setItem(`${section}Count`, taskCount);
+
+        const taskDiv = document.createElement('div');
+        taskDiv.innerHTML = `
+          <label>
+            <input type="checkbox" id="${section}${taskCount}">
+            <input type="text" id="${section}-text${taskCount}" value="${text}">
+          </label>
+          <button class="delete" onclick="deleteTask('${section}', ${taskCount})">🗑️</button>
+        `;
+        list.appendChild(taskDiv);
+
+        const checkbox = document.getElementById(`${section}${taskCount}`);
+        const textInput = document.getElementById(`${section}-text${taskCount}`);
+
+        checkbox.addEventListener('change', () => {
+          localStorage.setItem(`${section}${taskCount}`, checkbox.checked);
+          if (checkbox.checked) {
+            const taskText = textInput.value || `${section.toUpperCase()} ${taskCount}`;
+            new Notification(`${section.toUpperCase()} CONCLUÍDO: ${taskText}`);
+          }
+          updateImportantProgress(section);
+        });
+
+        textInput.addEventListener('input', () => {
+          localStorage.setItem(`${section}-text${taskCount}`, textInput.value);
+        });
+
+        localStorage.setItem(`${section}-text${taskCount}`, text);
+        updateImportantProgress(section);
       }
     }
 
@@ -1039,8 +1018,9 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
       const text = localStorage.getItem(`todo-text${i}`) || '';
       const date = localStorage.getItem(`todo-date${i}`) || '';
       const time = localStorage.getItem(`todo-time${i}`) || '';
+      const destination = localStorage.getItem(`todo-destination${i}`) || 'calendar';
       const checked = localStorage.getItem(`todo${i}`) === 'true';
-      addTodoTask(i, text, date, time, checked);
+      addTodoTask(i, text, date, time, destination, checked);
     }
     updateTodoProgress();
 
@@ -1192,7 +1172,7 @@ System: Desculpe, mas parece que o código no `<xaiArtifact>` foi cortado e não
         updateImportantProgress(section);
       });
 
-      window[`deleteTask_${section}`] = deleteTask; // Expose deleteTask globally for onclick
+      window[`deleteTask_${section}`] = deleteTask;
     });
   </script>
 </body>
